@@ -87,9 +87,11 @@ fi
 # Installing tpm, the plugin manager for tmux
 if ! [ -d ~/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 fi
 
+nvim +PlugInstall +qall
+nvim +UpdateRemotePlugins +qall
+
 echo -e "\n\n\n\t Everything installed! please do the following steps now: \n"
-echo "Please press <tmux prefix>+I to download all necessary plugins"
-echo "The neovim Plugins will automatically be downloaded on the next start of neovim"
 echo "Please restart your shell now"
