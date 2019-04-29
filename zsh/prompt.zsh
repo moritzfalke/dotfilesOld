@@ -11,7 +11,7 @@ set_prompt() {
 
     # show username and host when connected via ssh
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        PS1+="$USER%{$fg[red]%}%@%m:%{$reset_color%}"
+        PS1+="%{$fg[blue]%}$USER%{$reset_color%}@%{$fg[green]%}%m:%{$reset_color%}"
     fi
     # Path: http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
     PS1+="%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}"
