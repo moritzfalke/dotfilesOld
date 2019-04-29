@@ -1,5 +1,6 @@
 " Configuration for neovim
 
+" get standard vim config
 source ~/.vimrc
 
 " load Plug (plugin manager)

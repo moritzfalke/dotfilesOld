@@ -31,7 +31,7 @@
         set splitbelow             " Open new windows below the current window.
         set splitright             " Open new windows right of the current window.
 
-        set dir=/tmp/
+        set dir=/tmp/              " Direcotory where swap files etc. are stored
 
         set relativenumber         " Show the relative numbers on the left
         set number                 " Show the number of the current line

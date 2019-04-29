@@ -1,12 +1,13 @@
 # create or attach to main tmux session
 if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
+
 # Vars
     export TERM="xterm-256color"
     export ZSH=$HOME/.oh-my-zsh
     export VISUAL=vim
     export EDITOR=vim
-#    export ZSHDOTFILES=$0:a:h
-# https://stackoverflow.com/questions/59895/get-the-source-directory-of-a-bash-script-from-within-the-script-itself
+    # get directory of this script
+    # https://stackoverflow.com/questions/59895/get-the-source-directory-of-a-bash-script-from-within-the-script-itself
     SOURCE=${(%):-%N}
     while [ -h "$SOURCE" ]; do
         DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -15,8 +16,8 @@ if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
     done
     DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+# tried powerlevel9k
 #export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir rbenv vcs)
-
 #export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs public_ip)
 #export ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -66,12 +67,3 @@ source $DOTFILES_DIR/prompt.zsh
 case $(uname -a) in
    *Microsoft*) unsetopt BG_NICE ;;
 esac
-
-#source ~/.dotfiles/tmux/tmux.zsh
-
-#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=13'
-
-#test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-#test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-
