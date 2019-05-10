@@ -55,7 +55,7 @@ check_for_software tmux
 echo
 check_for_software nvim
 echo
-if [ -d ~/.oh-my-zsh/]; then
+if ! [ -d ~/.oh-my-zsh/ ]; then
     echo -e "installing oh-my-zsh"
     echo "When installed, run 'exit' to continue the installation of the dotfiles"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
