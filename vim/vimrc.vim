@@ -66,6 +66,10 @@
         :nnoremap <C-n> :bnext<ESC>
         :nnoremap <C-p> :bprevious<ESC>
 
+" Add empy line above or below with space
+        map <Enter> o<ESC>
+        map <S-Enter> O<ESC>
+
 
 " Return to the same line you left off at
 augroup line_return

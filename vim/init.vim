@@ -27,6 +27,8 @@ Plug 'bling/vim-bufferline'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " set the colorscheme

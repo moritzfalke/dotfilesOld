@@ -58,8 +58,15 @@ if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
     }
     alias cd="c"
 
-eval $(dircolors $DOTFILES_DIR/nord_dircolors)
-
+    # Switch to newly created directory
+    mdir() {
+        mkdir $1;
+        cd $1;
+    }
+    alias mkdir="mdir"
+#if ![[ $(uname -a) == "*Darwin*" ]] ; then
+#    eval $(dircolors $DOTFILES_DIR/nord_dircolors)
+#fi
 source $DOTFILES_DIR/prompt.zsh
 
 # fix problems with background jobs on windows for zsh
